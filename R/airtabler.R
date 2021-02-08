@@ -547,7 +547,9 @@ air_table_funs <- function(base, table_name) {
     })
   }
 
-  do.call(rbind, x)
+  # Using bind_rows from dplyr to avoid corner case errors
+  #do.call(rbind, x)
+  bind_rows(x)
 
 }
 
